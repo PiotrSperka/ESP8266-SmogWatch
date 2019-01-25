@@ -1,0 +1,28 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+}
+
+.FormDataSelector {
+    margin-left: 10px;
+}
+
+.ChartContainer {
+    min-width: 400px;
+    max-width: 1200px;
+    min-height: 400px;
+    margin: auto;
+}
+
+#formDataSelect {
+    margin: auto;
+    width: 500px;
+    font-size: 10pt;
+}
+
+#divInformations {
+    margin: auto;
+    min-width: 400px;
+    max-width: 800px;
+    font-size: 10pt;
+}

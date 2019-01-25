@@ -1,0 +1,206 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L RF_Module:ESP-12E U1
+U 1 1 5C4B3B71
+P 5650 3350
+F 0 "U1" H 5950 4350 50  0000 C CNN
+F 1 "ESP-12E" H 5950 4250 50  0000 C CNN
+F 2 "RF_Module:ESP-12E" H 5650 3350 50  0001 C CNN
+F 3 "http://wiki.ai-thinker.com/_media/esp8266/esp8266_series_modules_user_manual_v1.1.pdf" H 5300 3450 50  0001 C CNN
+	1    5650 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR01
+U 1 1 5C4B3C0F
+P 5650 2500
+F 0 "#PWR01" H 5650 2350 50  0001 C CNN
+F 1 "+3.3V" H 5665 2673 50  0000 C CNN
+F 2 "" H 5650 2500 50  0001 C CNN
+F 3 "" H 5650 2500 50  0001 C CNN
+	1    5650 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5C4B3C48
+P 5650 4100
+F 0 "#PWR02" H 5650 3850 50  0001 C CNN
+F 1 "GND" H 5655 3927 50  0000 C CNN
+F 2 "" H 5650 4100 50  0001 C CNN
+F 3 "" H 5650 4100 50  0001 C CNN
+	1    5650 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 2500 5650 2550
+Wire Wire Line
+	5650 4050 5650 4100
+$Comp
+L Sensor:DHT11 U2
+U 1 1 5C4B3CBD
+P 7500 3450
+F 0 "U2" H 7271 3496 50  0000 R CNN
+F 1 "DHT11" H 7271 3405 50  0000 R CNN
+F 2 "" H 7650 3700 50  0001 C CNN
+F 3 "http://akizukidenshi.com/download/ds/aosong/DHT11.pdf" H 7650 3700 50  0001 C CNN
+	1    7500 3450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 U4
+U 1 1 5C4B3DFB
+P 7600 4200
+F 0 "U4" H 7680 4192 50  0000 L CNN
+F 1 "PMS5003" H 7680 4101 50  0000 L CNN
+F 2 "" H 7600 4200 50  0001 C CNN
+F 3 "~" H 7600 4200 50  0001 C CNN
+	1    7600 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 3450 7200 3450
+Wire Wire Line
+	7400 4200 6900 4200
+Wire Wire Line
+	6900 4200 6900 3350
+Wire Wire Line
+	6900 3350 6250 3350
+Wire Wire Line
+	6250 3550 6850 3550
+Wire Wire Line
+	6850 3550 6850 4300
+Wire Wire Line
+	6850 4300 7400 4300
+$Comp
+L Connector_Generic:Conn_01x04 U3
+U 1 1 5C4B4DFB
+P 7550 2400
+F 0 "U3" H 7629 2392 50  0000 L CNN
+F 1 "BMP280" H 7629 2301 50  0000 L CNN
+F 2 "" H 7550 2400 50  0001 C CNN
+F 3 "~" H 7550 2400 50  0001 C CNN
+	1    7550 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 3250 6900 3250
+Wire Wire Line
+	6900 3250 6900 2500
+Wire Wire Line
+	6900 2500 7350 2500
+Wire Wire Line
+	6250 3150 6850 3150
+Wire Wire Line
+	6850 3150 6850 2400
+Wire Wire Line
+	6850 2400 7350 2400
+$Comp
+L power:+3.3V #PWR03
+U 1 1 5C4B4FE3
+P 7300 2250
+F 0 "#PWR03" H 7300 2100 50  0001 C CNN
+F 1 "+3.3V" H 7315 2423 50  0000 C CNN
+F 2 "" H 7300 2250 50  0001 C CNN
+F 3 "" H 7300 2250 50  0001 C CNN
+	1    7300 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5C4B4FF6
+P 7300 2650
+F 0 "#PWR04" H 7300 2400 50  0001 C CNN
+F 1 "GND" H 7305 2477 50  0000 C CNN
+F 2 "" H 7300 2650 50  0001 C CNN
+F 3 "" H 7300 2650 50  0001 C CNN
+	1    7300 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR07
+U 1 1 5C4B5009
+P 7600 3100
+F 0 "#PWR07" H 7600 2950 50  0001 C CNN
+F 1 "+3.3V" H 7615 3273 50  0000 C CNN
+F 2 "" H 7600 3100 50  0001 C CNN
+F 3 "" H 7600 3100 50  0001 C CNN
+	1    7600 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR08
+U 1 1 5C4B501C
+P 7600 3800
+F 0 "#PWR08" H 7600 3550 50  0001 C CNN
+F 1 "GND" H 7605 3627 50  0000 C CNN
+F 2 "" H 7600 3800 50  0001 C CNN
+F 3 "" H 7600 3800 50  0001 C CNN
+	1    7600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5C4B5042
+P 7350 4450
+F 0 "#PWR06" H 7350 4200 50  0001 C CNN
+F 1 "GND" H 7355 4277 50  0000 C CNN
+F 2 "" H 7350 4450 50  0001 C CNN
+F 3 "" H 7350 4450 50  0001 C CNN
+	1    7350 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 2300 7300 2300
+Wire Wire Line
+	7300 2300 7300 2250
+Wire Wire Line
+	7350 2600 7300 2600
+Wire Wire Line
+	7300 2600 7300 2650
+Wire Wire Line
+	7600 3150 7600 3100
+Wire Wire Line
+	7600 3800 7600 3750
+Wire Wire Line
+	7400 4100 7350 4100
+Wire Wire Line
+	7350 4100 7350 4050
+Wire Wire Line
+	7400 4400 7350 4400
+Wire Wire Line
+	7350 4400 7350 4450
+$Comp
+L power:+5V #PWR05
+U 1 1 5C4B59D0
+P 7350 4050
+F 0 "#PWR05" H 7350 3900 50  0001 C CNN
+F 1 "+5V" H 7365 4223 50  0000 C CNN
+F 2 "" H 7350 4050 50  0001 C CNN
+F 3 "" H 7350 4050 50  0001 C CNN
+	1    7350 4050
+	1    0    0    -1  
+$EndComp
+Text Label 7050 2400 0    50   ~ 0
+SDA
+Text Label 7050 2500 0    50   ~ 0
+SCL
+Text Label 7000 4200 0    50   ~ 0
+PMS_Tx
+Text Label 7000 4300 0    50   ~ 0
+PMS_Rx
+$EndSCHEMATC

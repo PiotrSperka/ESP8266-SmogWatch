@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SmogWatch</title>
+        <meta charset="UTF-8">
+        <script src="js/Chart.bundle.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body onload="OnIndexLoaded();">
+        <div id="formDataSelect">
+            <form id="dataSelect" class="FormDataSelector">
+                <div>
+                    <label for="startDate"><b>Początek okresu prezentacji danych:</b></label>
+                    <input type="date" id="startDate" name="startDate"><br>
+                    <label for="endDate"><b>Koniec okresu prezentacji danych:</b></label>
+                    <input type="date" id="endDate" name="endDate"><br>
+                    <p><b>Okres uśredniania:</b></p>
+                    <div>
+                        <input type="radio" id="avgNone"
+                            name="avg" value="none">
+                        <label for="avgNone">Dane surowe</label>
+
+                        <input type="radio" id="avgHour"
+                            name="avg" value="hour" checked>
+                        <label for="avgHour">Uśrednianie godzinowe</label>
+
+                        <input type="radio" id="avgDay"
+                            name="avg" value="day">
+                        <label for="avgDay">Uśrednianie dobowe</label>
+                    </div>
+                    <p><b>Prezentacja danych zapylenia:</b></p>
+                    <div>
+                        <input type="radio" id="normal"
+                            name="pmPercent" value="false" checked>
+                        <label for="normal">Dane bezwzględne</label>
+
+                        <input type="radio" id="percentage"
+                            name="pmPercent" value="true">
+                        <label for="percentage">Dane względne</label>
+                    </div>
+                    <button name="refresh" type="button" onClick="GetPmChart();">Wyświetl dane</button>
+                </div>
+            </form>
+        </div>
+        <div id="divInformations">
+            <p>W przypadku danych względnych przyjęto, że 100% normy dla PM10 to 50 &mu;g/m<sup>3</sup>
+                , dla PM2.5 to 25 &mu;g/m<sup>3</sup>, natomiast dla PM1.0 to 15 &mu;g/m<sup>3</sup></p>
+            <p>Oficjalnie w Polsce obowiązują normy dobowe jedynie dla PM10 (50 &mu;g/m<sup>3</sup>), natomiast normy roczne to odpowiednio 
+            40 &mu;g/m<sup>3</sup> dla PM10 oraz 25 &mu;g/m<sup>3</sup> dla PM2.5</p>
+            <p>Miejsce pomiarów: ul. Pogodna, Rybnik</p>
+            <p>Sensor zapylenia: PMS5003, sensor temperatury i ciśnienia: BMP280, sensor wilgotności: DHT-22</p>
+        </div>
+        <div id="pmChartContainer" class="ChartContainer">
+            <canvas id="pmChart"></canvas>
+        </div>
+        <div id="weatherChartContainer" class="ChartContainer">
+            <canvas id="weatherChart"></canvas>
+        </div>
+    </body>
+</html>

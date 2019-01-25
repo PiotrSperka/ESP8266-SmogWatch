@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SmogWatch - #LOCATION#</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                margin-left: 30px;
+                margin-top: 15px;
+            }
+            p {
+                font-size: 12pt;
+            }
+            font.version {
+                font-size: 10pt;
+            }
+            font.date {
+                font-size: 8pt;
+            }
+            .low-risk{
+                color: green;
+            }
+
+            .medium-risk{
+                color: orange;
+            }
+
+            .high-risk{
+                color: red;
+            }
+        </style>
+        <script type="text/javascript">
+            function PM(value, med, hi) {
+                val = parseInt(value);
+                if (isNaN(val)) {
+                    document.write(value);
+                } else {
+                    if (val < med) {
+                        document.write('<span class="low-risk">' + value + '</span>');
+                    } else if (val < hi) {
+                        document.write('<span class="medium-risk">' + value + '</span>');
+                    } else {
+                        document.write('<span class="high-risk">' + value + '</span>');
+                    }
+                }
+                
+            }
+            function GetDate(timestamp) {
+                var a = new Date(timestamp*1000);
+                var months = ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'];
+                var month = months[a.getMonth()];
+                document.write(a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds() + ' ' + a.getDate() + ' ' + month + ' ' + a.getFullYear());
+            }
+        </script>
+    </head>
+    <body>
+        <h1>SmogWatch <font class="version">#VERSION#</font></h1>
+        <h2>Aktualne odczyty:</h2>
+        <h4>#LOCATION#</h4>
+        <p class="odczyt">Temperatura otoczenia: <b>#TEMPERATURE#</b> [&deg;C] (+/- 1&deg;C) <font class="date"><script>GetDate("#TEMPERATURE_TS#");</script></font></p>
+        <p class="odczyt">Wilgotność: <b>#HUMIDITY#</b> [%] (+/- 2%) <font class="date"><script>GetDate("#HUMIDITY_TS#");</script></font></p>
+        <p class="odczyt">Ciśnienie: <b>#PRESSURE#</b> [hPa] (+/- 1hPa) <font class="date"><script>GetDate("#HUMIDITY_TS#");</script></font></p>
+        <p class="odczyt">PM1.0: <b><script>PM("#PM1_0#", 25, 75);</script></b> [&mu;g/m<sup>3</sup>] <font class="date"><script>GetDate("#PM_TS#");</script></font></p>
+        <p class="odczyt">PM2.5: <b><script>PM("#PM2_5#", 25, 75);</script></b> [&mu;g/m<sup>3</sup>] <font class="date"><script>GetDate("#PM_TS#");</script></font></p>
+        <p class="odczyt">PM10: <b><script>PM("#PM10#", 50, 150);</script></b> [&mu;g/m<sup>3</sup>] <font class="date"><script>GetDate("#PM_TS#");</script></font></p>
+    </body>
+</html>
